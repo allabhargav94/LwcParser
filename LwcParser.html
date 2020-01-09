@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+      <script src="LwcParser.js" type="text/javascript" defer></script>
+    <title>LWC PARSER</title>
+  </head> 
+  <body>
+    <div class="container-fluid">
+      <!-- <div class="card bg-dark text-white">
+                        <div class="card-body"> -->
+      <center>
+        <button
+          onclick="lwcParserFromAuraFile()"
+          class="btn btn-primary"
+          type="button" id="lwcparserbtn"
+        >
+          Lwc Parser
+        </button> &nbsp; &nbsp;<span class="badge badge-success" id="resTime"></span>
+
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#suggestionModel">Manual Actions</button>
+
+      </center>
+
+             <!-- The Modal -->
+  <div class="modal fade" id="suggestionModel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Actions Need To Taken Before Migrate To Lwc :)</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">     
+            <div class="container">
+                <div id="accordion">
+                  <!-- tag replacement section -->
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        Replacement of lightning tags.
+                      </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordion" style="color:white;background-color:red">
+                      <div class="card-body" id="tagReplacement">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- other html  changes section -->
+                  <div class="card">
+                      <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                          below actions are changed in lwc please change as per suggested below.
+                        </a>
+                      </div>
+                      <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+                        <div class="card-body" id="warningsHtml" style="color:white;background-color:red">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  </div>
+          
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+      <!-- </div> -->
+      <div class="row">
+        <div class="col-lg-6 bg-success">
+          <label for="cmpntName">Enter Component Name:</label>
+          <input type="text" class="form-control" id="cmpntName" />
+          <label for="componentfile">Place component file here:</label>
+          <textarea
+            class="form-control"
+            rows="18"
+            id="componentfile"
+          ></textarea>
+          <div id="input" style="display:none"></div>
+        </div>
+        <div class="col-lg-6 bg-info">
+          <div id="output">
+             <!-- <div id="suggestionopt" style="color:black;background-color:seagreen"></div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+   <center> <p style="margin-bottom: 0;">© Bhargav Alla</p></center>
+  </body>
+</html>
